@@ -5,36 +5,67 @@
   </head>
   <body>
     <a-scene>
+
+      <a-assets>
+    <img id="sky" src="sky.jpeg">
+    <img id="snowy asphalt" src="road3.jpg">
+    <img id="snowy roof" src="roof2.webp">
+    <img id="snowy grass" src="grass.jpeg">
+    <img id="brick" src="wall.jpg">
+  </a-assets>
+
       <!-- Camera -->
       <a-entity position="0 1.6 0">
         <a-camera></a-camera>
       </a-entity>
 
-      <a-assets>
-    <img id="sky" src="snowy_sky_texture.jpg">
-    <img id="snowy asphalt" src="snowy_asphalt_texture.jpg">
-    <img id="snowy roof" src="snowy_roof_texture.jpg">
-    <img id="snowy grass" src="snowy_grass_texture.jpg">
-    <img id="brick" src="brick_texture.jpg">
-  </a-assets>
-
       <!-- Sky -->
       <a-sky src="#sky" color="#87CEEB" repeat="1"></a-sky>
 
       <!-- Snowy Ground -->
-      <a-plane position="0 0 -20" rotation="-90 0 0" width="50" height="100" src="#snowy grass" repeat="15 15"></a-plane>
+      <a-plane position="0 0 -20" rotation="-90 0 0" width="50" height="100" src="#snowy grass" repeat="10 12"></a-plane>
 
       <!-- Road -->
-      <a-box src="#snowy asphalt" position="0 0.01 -20" depth="100" height="0.01" width="4" repeat="1 100"></a-box>
+      <a-box src="#snowy asphalt" position="0 0.01 -20" depth="100" height="0.01" width="4" repeat="1 10"></a-box>
+      
+      <!--Street lamps-->
+    <a-entity position="3 0 -2">
+       <a-cylinder position="0 1.5 0" radius="0.05" height="3" color="#666"></a-cylinder>
+      <a-box position="0 3.1 0" depth="0.2" height="0.2" width="0.4" color="#CFFF04"></a-box>
+    </a-entity>
 
-      <!-- Houses -->
+    <a-entity position="-3 0 -2">
+      <a-cylinder position="0 1.5 0" radius="0.05" height="3" color="#666"></a-cylinder>
+      <a-box position="0 3.1 0" depth="0.2" height="0.2" width="0.4" color="#CFFF04"></a-box>
+    </a-entity>
+
+    <a-entity position="-3 0 -17">
+      <a-cylinder position="0 1.5 0" radius="0.05" height="3" color="#666"></a-cylinder>
+      <a-box position="0 3.1 0" depth="0.2" height="0.2" width="0.4" color="#CFFF04"></a-box>
+    </a-entity>
+
+    <a-entity position="3 0 -17">
+      <a-cylinder position="0 1.5 0" radius="0.05" height="3" color="#666"></a-cylinder>
+      <a-box position="0 3.1 0" depth="0.2" height="0.2" width="0.4" color="#CFFF04"></a-box>
+    </a-entity>
+
+     <a-entity position="3 0 -35">
+        <a-cylinder position="0 1.5 0" radius="0.05" height="3" color="#666"></a-cylinder>
+        <a-box position="0 3.1 0" depth="0.2" height="0.2" width="0.4" color="#CFFF04"></a-box>
+      </a-entity>
+
+      <a-entity position="-3 0 -35">
+        <a-cylinder position="0 1.5 0" radius="0.05" height="3" color="#666"></a-cylinder>
+        <a-box position="0 3.1 0" depth="0.2" height="0.2" width="0.4" color="#CFFF04"></a-box>
+      </a-entity>
+      <!-- Houses --> 
 
       <!-- House 1 (Left side, facing right) -->
       <a-entity position="-6 0 -10" rotation="0 90 0">
-        <a-box src="#brick" color="#d32f2f" depth="6" height="3" width="6" position="0 1.5 0"></a-box>
-        <a-box src="#brick" color="#d32f2f"depth="4" height="2.5" width="3" position="-4.5 1.25 0"></a-box>
-        <a-box src="#brick" color="#d32f2f"depth="4" height="2.5" width="3" position="4.5 1.25 0"></a-box>
-        <a-box src="#brick" color="#d32f2f"depth="4" height="2.5" width="4" position="0 4.25 0"></a-box>
+        <a-box src="#brick" color ="brown" depth="6" height="3" width="6" position="0 1.5 0"></a-box>
+        <a-box src="#brick" color ="brown" depth="4" height="2.5" width="3" position="-4.5 1.25 0"></a-box>
+        <a-box src="#brick" color ="brown" depth="4" height="2.5" width="3" position="4.5 1.25 0"></a-box>
+        <a-box src="#brick" color ="brown" depth="4" height="2.5" width="4" position="0 4.25 0"></a-box>
 
         <a-cylinder src="#snowy roof" radius="3.5" height="6" theta-start="0" theta-length="180" rotation="0 0 90" position="0 5 0"></a-cylinder>
         <a-box src="#snowy roof" width="6" height="0.1" depth="7" position="0 5 0"></a-box>
@@ -53,8 +84,8 @@
 
       <!-- House 2 (Right side, facing left) -->
       <a-entity position="6 0 -10" rotation="0 -90 0">
-        <a-box src="#brick"color="#d32f2f" depth="6" height="3" width="6" position="0 1.5 0"></a-box>
-        <a-box src="#brick"color="#c62828" depth="4" height="2.5" width="3" position="-4.5 1.25 0"></a-box>
+        <a-box src="#brick"color ="brown"  depth="6" height="3" width="6" position="0 1.5 0"></a-box>
+        <a-box src="#brick"color ="brown"  depth="4" height="2.5" width="3" position="-4.5 1.25 0"></a-box>
         <a-box src="#brick"color="#c62828" depth="4" height="2.5" width="3" position="4.5 1.25 0"></a-box>
         <a-box src="#brick"color="#e53935" depth="4" height="2.5" width="4" position="0 4.25 0"></a-box>
 
