@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", function () {
   for (let i = 0; i < 100; i++) {
     let x = rnd(-20, 20);
     let z = rnd(-20, 20);
-    createTree(x, 0, z);
+    createTree(x, 2, z);
   }
 
   // Task 2: Add clouds
