@@ -66,9 +66,9 @@ function createHouse(x, z) {
   // Roof
   let roof = document.createElement("a-cone");
   roof.setAttribute("color", "#8b0000");
-  roof.setAttribute("radius-bottom", "2.2");
+  roof.setAttribute("radius-bottom", "2.8");
   roof.setAttribute("radius-top", "0.1");
-  roof.setAttribute("height", "1.5");
+  roof.setAttribute("height", "3");
   roof.setAttribute("position", "0 2.75 0");
   house.append(roof);
 
