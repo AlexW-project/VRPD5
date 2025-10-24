@@ -46,3 +46,44 @@ function rocket_loop(){
     rocket.setAttribute("position", {x:0, y:rocket.a, z:0});
     window.requestAnimationFrame(rocket_loop);
 }
+
+window.addEventListener("DOMContentLoaded", function() {
+    const scene = document.querySelector("a-scene");
+    const dude = document.querySelector("#dude");
+
+    dude.a = 1;   // initial scale factor
+    dude.da = 0.01; // growth rate
+
+    function dude_loop() {
+        dude.a += dude.da;
+        dude.setAttribute("scale", `${dude.a} ${dude.a} ${dude.a}`);
+        window.requestAnimationFrame(dude_loop);
+    }
+
+    dude_loop();
+});
+
+window.addEventListener("DOMContentLoaded", function() {
+    const scene = document.querySelector("a-scene");
+    const sun = document.querySelector("#sun");
+
+    sun.a = 1;        // scale
+    sun.da = 0.01;    // scale growth rate
+    sun.opacity = 0;  // start fully transparent
+    sun.dopacity = 0.01; // fade-in rate
+
+    sun.setAttribute("material", "transparent: true; opacity: 0");
+
+    function sun_loop() {
+        // Fade in until fully visible
+        if (sun.opacity < 1) {
+            sun.opacity += sun.dopacity;
+            if (sun.opacity > 1) sun.opacity = 1; // clamp to 1
+            sun.setAttribute("material", `transparent: true; opacity: ${sun.opacity}`);
+        }
+
+        window.requestAnimationFrame(sun_loop);
+    }
+
+    sun_loop();
+});

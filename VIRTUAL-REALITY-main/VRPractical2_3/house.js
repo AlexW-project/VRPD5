@@ -15,5 +15,7 @@ class House{
   
         this.obj.setAttribute("position",{x:x, y:y, z:z});
         scene.append( this.obj )
-  }
+
+    }
 }
+
