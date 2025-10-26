@@ -67,8 +67,6 @@ window.addEventListener("DOMContentLoaded", function() {
     const scene = document.querySelector("a-scene");
     const sun = document.querySelector("#sun");
 
-    sun.a = 1;        // scale
-    sun.da = 0.01;    // scale growth rate
     sun.opacity = 0;  // start fully transparent
     sun.dopacity = 0.01; // fade-in rate
 
