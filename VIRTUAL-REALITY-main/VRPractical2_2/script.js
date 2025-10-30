@@ -1,4 +1,3 @@
-let scene;
 let car;
 let pokeball;
 let rocket;
