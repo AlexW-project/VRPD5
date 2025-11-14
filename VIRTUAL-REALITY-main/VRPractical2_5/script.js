@@ -11,20 +11,28 @@
 */
 
 let maze = [
-  "---CC------RRRRR--------CCC-----",
-  "------CCC--------RR--CCCC---CC---",
-  "--------CCCC----RR---CC-----",
-  "----------CCCC------------",
-  "------RRRRR---CCCCC-------------",
-  "----CCC------RRR----CCC--------",
-  "------CCCCRRR--------CCCC--------",
-  "--CCC--------CC--RRRR---------CCC-",
-  "CCC----------CC------RRRRR----CCC--",
-  "--------CCC------CC-------RRRR-",
-  "-------CCCCC--------CCCCCC----RRRR---",
-  "---CCCCCC----RRR-------CCCCCC--------",
+  "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+  "CCCCC-------------------------CCCCC--C",
+  "CCCCC--CCCCC-------CCCCC------CCCCC--C",
+  "CC----CC----------------CC----CC----CC",
+  "CC----CC---------CC-----CCCCCCC-----CC",
+  "CC--CC-------CC----------CC----CCCCC-C",
+  "CC--CC---------CCCCC--CCCCC----CCCCC-C",
+  "CC---CCCCC-----CC-----CC----------CCCC",
+  "CC-CCCCC------CCCCC---------CCCCC---CC",
+  "CC---CC---CC--CCCCC-----CCCCCC--------",
+  "CC---CC---CC--------------------CC----",
+  "CC-CCCCC----------CCCCC-----CCCCC-----",
+  "CC-CCCCC--CCCCC--------CCCCC----------",
+  "CC----CCCCC---------CCCCC-------CCCCC-",
+  "CC-CCCCC------CCCCC------------------C",
+  "CC-CCCCC-------------CC-----CCCCC--CCC",
+  "CC----CCCCC-------CCCCC------CCCCC--CC",
+  "CC---CC--CCCCC------CC---CCCCC-------C",
+  "CC-CCCCC-----CCCCC---CCCCC------CCCCCC",
+  "CC----CC---------CCCCC-------CCCCCCCCC",
+  "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
 ];
-
 /* Challenge 2
    Add appropriate classes to use as objects in your map.  Choose characters to represent these objects and position them on the map.   In Challenge 5 and 6, you will generate the map using the character representation of the objects you chose to place in the world. Get Creative!
 */
