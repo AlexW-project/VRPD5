@@ -1,14 +1,17 @@
+<!DOCTYPE html>
 <html>
   <head>
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="block.js"></script>
+    <script src="rock.js"></script>
+    <script src="tree.js"></script>
     <script src="script.js"></script>
-     <script src="Walls.js"></script>
-      <script src="Rock.js"></script>
   </head>
   <body>
-    <a-scene>
-      <a-plane rotation="-90 0 0" width="50" height="50" color="#ADD8E6"></a-plane>
-      <a-sky color="white"></a-sky>
-      <a-camera position="40 20 10"></a-camera>
+    <a-scene >
+      <a-plane rotation="-90 0 0" width="500" height="500" src="ground.jpg" repeat="50 50" position="90 0 50""></a-plane>
+      <a-sky color="cyan"></a-sky>
+      <a-camera position="0 4 0"></a-camera>
     </a-scene>
+  </body>
 </html>
