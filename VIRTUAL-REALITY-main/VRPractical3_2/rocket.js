@@ -1,0 +1,116 @@
+class Rocket{
+  constructor(x,y,z){
+    this.x = x;
+    this.z = z;
+    this.y = y;
+    this.obj = document.createElement("a-entity");
+    
+    let base = document.createElement("a-cylinder");
+    base.setAttribute("height",25);
+    base.setAttribute("radius",1.5);
+    base.setAttribute("position",{x:0,y:15,z:0});
+    base.setAttribute("color","orange");
+    let base1 = document.createElement("a-cylinder");
+    base1.setAttribute("height",15);
+    base1.setAttribute("radius",1);
+    base1.setAttribute("position",{x:-2.5,y:9.5,z:0});
+    base1.setAttribute("color","#D3D3D3");
+    let base2 = document.createElement("a-cylinder");
+    base2.setAttribute("height",15);
+    base2.setAttribute("radius",1);
+    base2.setAttribute("position",{x:2.5,y:9.5,z:0});
+    base2.setAttribute("color","#D3D3D3");
+    let top = document.createElement("a-cone");
+    top.setAttribute("height",3);
+    top.setAttribute("radius-top",1.25);
+    top.setAttribute("radius-bottom",1.5);
+    top.setAttribute("position",{x:0,y:29,z:0});
+    top.setAttribute("color","orange");
+    let top2 = document.createElement("a-cone");
+    top2.setAttribute("height",2);
+    top2.setAttribute("radius-top",0.1);
+    top2.setAttribute("segments-radial",67);
+    top2.setAttribute("position",{x:2.5,y:18,z:0});
+    top2.setAttribute("color","#D3D3D3");
+    let top3 = document.createElement("a-cone");
+    top3.setAttribute("height",2);
+    top3.setAttribute("radius-top",0.1);
+    top3.setAttribute("segments-radial",67);
+    top3.setAttribute("position",{x:-2.5,y:18,z:0});
+    top3.setAttribute("color","#D3D3D3");
+    let top4 = document.createElement("a-cone");
+    top4.setAttribute("height",5);
+    top4.setAttribute("radius-top",0.5);
+    top4.setAttribute("radius-bottom",1.25);
+    top4.setAttribute("position",{x:0,y:33,z:0});
+    top4.setAttribute("color","#D3D3D3");
+    let top5 = document.createElement("a-cone");
+    top5.setAttribute("height",7.5);
+    top5.setAttribute("radius-top",0.05);
+    top5.setAttribute("radius-bottom",0.5);
+    top5.setAttribute("position",{x:0,y:39,z:0});
+    top5.setAttribute("color","#D3D3D3");
+    let bot = document.createElement("a-cone");
+    bot.setAttribute("height",1);
+    bot.setAttribute("radius-top",1.5);
+    bot.setAttribute("radius-bottom",1.75);
+    bot.setAttribute("segments-radial",67);
+    bot.setAttribute("position",{x:0,y:2,z:0});
+    bot.setAttribute("color","grey");
+    let bot2 = document.createElement("a-cone");
+    bot2.setAttribute("height",1);
+    bot2.setAttribute("radius-top",1);
+    bot2.setAttribute("radius-bottom",1.25);
+    bot2.setAttribute("segments-radial",67);
+    bot2.setAttribute("position",{x:2.5,y:1.5,z:0});
+    bot2.setAttribute("color","grey");
+    let bot3 = document.createElement("a-cone");
+    bot3.setAttribute("height",1);
+    bot3.setAttribute("radius-top",1);
+    bot3.setAttribute("radius-bottom",1.25);
+    bot3.setAttribute("segments-radial",67);
+    bot3.setAttribute("position",{x:-2.5,y:1.5,z:0});
+    bot3.setAttribute("color","grey");
+    let bot4 = document.createElement("a-cone");
+    bot4.setAttribute("height",1);
+    bot4.setAttribute("radius-top",1);
+    bot4.setAttribute("radius-bottom",1.25);
+    bot4.setAttribute("segments-radial",67);
+    bot4.setAttribute("position",{x:0,y:1.25,z:0});
+    bot4.setAttribute("color","black");
+    let bot5 = document.createElement("a-cone");
+    bot5.setAttribute("height",1);
+    bot5.setAttribute("radius-top",0.5);
+    bot5.setAttribute("radius-bottom",0.75);
+    bot5.setAttribute("segments-radial",67);
+    bot5.setAttribute("position",{x:2.5,y:0.75,z:0});
+    bot5.setAttribute("color","black");
+    let bot6 = document.createElement("a-cone");
+    bot6.setAttribute("height",1);
+    bot6.setAttribute("radius-top",0.5);
+    bot6.setAttribute("radius-bottom",0.75);
+    bot6.setAttribute("segments-radial",67);
+    bot6.setAttribute("position",{x:-2.5,y:0.75,z:0});
+    bot6.setAttribute("color","black");
+
+    this.obj.append(base);
+    this.obj.append(base1);
+    this.obj.append(base2);
+    this.obj.append(top);
+    this.obj.append(top2);
+    this.obj.append(top3);
+    this.obj.append(top4);
+    this.obj.append(top5)
+    this.obj.append(bot);
+    this.obj.append(bot2);
+    this.obj.append(bot3);
+    this.obj.append(bot4);
+    this.obj.append(bot5);
+    this.obj.append(bot6);
+
+    this.obj.setAttribute("position",{x:this.x, y:this.y , z:this.z});
+    scene.append(this.obj);
+
+  }
+
+}
