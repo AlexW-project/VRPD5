@@ -2,15 +2,89 @@
   <head>
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="script.js"></script>
-    <script src="rocket.js"></script>
   </head>
-    <body>
-      <h1>Hi</h1>
-      <a-scene >
-        <a-plane color="brown" position="0 0 -5" rotation="-90 0 0" width="50" height="50"></a-plane>
-        <a-sky color="blue"></a-sky>
+<body >
+      <a-scene>
+         <a-plane src="grass.jpg" side="double" repeat="10 -10" position="0 -0.01 -4" rotation="-90 0 0" width="100" height="100"></a-plane>
+        <a-sky src="sunset.jpg" rotation="0 -90 0" side="double"></a-sky>
 
-        <a-camera position="0 2 0">
+
+               <!-- Carousel -->
+        <a-entity id="carousel-arms" position="0 3 0">
+            <a-entity position="0 0 0" arm rotation="0 0 0">
+              <a-cylinder position="0 1 0" radius="0.1" height="2"></a-cylinder>
+              <a-box position="0 2 0" color="gray" width="0.5" height="0.5" depth="0.5"></a-box>
+            </a-entity>
+            <a-entity position="0 0 0" arm rotation="0 0 45">
+              <a-cylinder position="0 1 0" radius="0.1" height="2"></a-cylinder>
+              <a-box position="0 2 0" color="gray" width="0.5" height="0.5" depth="0.5"></a-box>
+            </a-entity>
+            <a-entity position="0 0 0" arm rotation="0 0 90">
+              <a-cylinder position="0 1 0" radius="0.1" height="2"></a-cylinder>
+              <a-box position="0 2 0" color="gray" width="0.5" height="0.5" depth="0.5"></a-box>
+            </a-entity>
+            <a-entity position="0 0 0" arm rotation="0 0 135">
+              <a-cylinder position="0 1 0" radius="0.1" height="2"></a-cylinder>
+              <a-box position="0 2 0" color="gray" width="0.5" height="0.5" depth="0.5"></a-box>
+            </a-entity>
+                    <a-entity position="0 0 0" arm rotation="0 0 180">
+              <a-cylinder position="0 1 0" radius="0.1" height="2"></a-cylinder>
+              <a-box position="0 2 0" color="gray" width="0.5" height="0.5" depth="0.5"></a-box>
+            </a-entity>
+            <a-entity position="0 0 0" arm rotation="0 0 225">
+              <a-cylinder position="0 1 0" radius="0.1" height="2"></a-cylinder>
+              <a-box position="0 2 0" color="gray" width="0.5" height="0.5" depth="0.5"></a-box>
+            </a-entity>
+            <a-entity position="0 0 0" arm rotation="0 0 270">
+              <a-cylinder position="0 1 0" radius="0.1" height="2"></a-cylinder>
+              <a-box position="0 2 0" color="gray" width="0.5" height="0.5" depth="0.5"></a-box>
+            </a-entity>
+            <a-entity position="0 0 0" arm rotation="0 0 315">
+              <a-cylinder position="0 1 0" radius="0.1" height="2"></a-cylinder>
+              <a-box position="0 2 0" color="gray" width="0.5" height="0.5" depth="0.5"></a-box>
+            </a-entity>
+        </a-entity>
+        <a-cylinder segments-radial="3"  rotation="-90 0 0" scale="0.5 0.25 2" color="black"  position="0 1 -0.5"></a-cylinder>
+        <a-cylinder color="gray" rotation="-90 0 0" radius="0.1" position="0 3 -0.25"></a-cylinder>
+        <!-- End Carousel -->
+
+
+        <a-box id="surpriseBox" position="-2 0.45 0" scale="0.5 0.5 0.5" color = "red"></a-box>
+
+
+        <a-entity id = "tree" position="-5 0 1" scale = "2 2 2">
+        <a-cylinder position="0 0.75 0" radius="0.15" height="2" src = "bark.jpg"></a-cylinder>
+        <a-cone position="0 1.6 0" radius-bottom="0.6" radius-top="0" height="0.6" src = "tree.jpg"></a-cone>
+        <a-cone position="0 2.1 0" radius-bottom="0.5" radius-top="0" height="0.5" src = "tree.jpg" ></a-cone>
+        <a-cone position="0 2.5 0" radius-bottom="0.4" radius-top="0" height="0.4" src = "tree.jpg" ></a-cone>
+        </a-entity>
+
+
+                <a-entity id = "tree2" position="-3 0 -4" scale = "3 3 3">
+        <a-cylinder position="0 0.75 0" radius="0.15" height="2" src = "bark.jpg"></a-cylinder>
+        <a-cone position="0 1.6 0" radius-bottom="0.6" radius-top="0" height="0.6" src = "tree.jpg"></a-cone>
+        <a-cone position="0 2.1 0" radius-bottom="0.5" radius-top="0" height="0.5" src = "tree.jpg" ></a-cone>
+        <a-cone position="0 2.5 0" radius-bottom="0.4" radius-top="0" height="0.4" src = "tree.jpg" ></a-cone>
+        </a-entity>
+
+
+
+      <a-entity id = "pacman" position = "-15 0 2">
+        <a-sphere position="0 4.5 -7" theta-start="0" theta-length="90" radius="2" rotation = "0 0 45" color="yellow" side="double"></a-sphere>
+        <a-sphere position="0 4.5 -7" theta-start="90" theta-length="90" rotation = "0 0 -45" radius="2" color="yellow" side="double"></a-sphere>
+        <a-circle color="black"position = "0 4.5 -7"material="side: double" rotation = "45 90 90" radius = "2"></a-circle>
+        <a-circle color="black"position = "0 4.5 -7"material="side: double" rotation = "-45 90 90" radius = "2"></a-circle>
+        <a-sphere position="-0.6 5 -5.3"radius="0.4" rotation = "0 0 0" color="black" side="double"></a-sphere>
+        <a-sphere position="-0.6 5 -8.7"radius="0.4" rotation = "0 0 0" color="black" side="double"></a-sphere>
+
+      </a-entity>
+
+
+
+
+
+
+        <a-camera position="-2 2 7">
           <a-cursor></a-cursor>
         </a-camera>
         
