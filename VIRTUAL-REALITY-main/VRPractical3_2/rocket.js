@@ -8,7 +8,7 @@ class Rocket{
     let base = document.createElement("a-cylinder");
     base.setAttribute("height",25);
     base.setAttribute("radius",1.5);
-    base.setAttribute("position",{x:0,y:15,z:0});
+    base.setAttribute("position",{x:0,y:15, z:0});
     base.setAttribute("color","orange");
     let base1 = document.createElement("a-cylinder");
     base1.setAttribute("height",15);
