@@ -1,7 +1,14 @@
 class Snowman{
-  constructor(x,z){
+  constructor(x,y,z){
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.dx = rnd(0.03,0.35);
+    this.dz = rnd(0.03,0.35);
     this.a = 0;
     this.da = 1;
+    this.die = false;
+    this.checkHit = false;
     
     this.obj = document.createElement("a-entity")
     for(let i = 0; i < 3; i++){
@@ -14,7 +21,7 @@ class Snowman{
       let eye = document.createElement("a-sphere");
       eye.setAttribute("position",{x:-0.25 + 0.50 * i,y:3.5,z:0.85});
       eye.setAttribute("radius",0.15);
-      eye.setAttribute("color","black")
+      eye.setAttribute("color","red")
       this.obj.append(eye)
     }
     let nose = document.createElement("a-cone")
@@ -34,8 +41,25 @@ class Snowman{
       arm.setAttribute("height",2);
       this.obj.append(arm)
     }
-    this.obj.setAttribute("position",{x:x,y:0,z:z});
+    this.obj.setAttribute("position",{x:x,y:y,z:z});
     scene.append(this.obj);
   }
+  walk(){
+    this.z += this.dz;
+    this.x += this.dx;
+  if (this.x > 100 || this.x < -100){
+    this.dx = -this.dx;
+  }
+  if (this.z > 100 || this.z < -60){
+    this.dz = -this.dz;
+  }
 
+    this.obj.setAttribute("position", {x:this.x, y:this.y, z:this.z});
+    if (this.die){
+      this.a += this.da;
+      this.y -= 0.05; 
+      this.obj.setAttribute("rotation", {x:0, y:this.a, z:0});
+      this.obj.setAttribute("position", {x:this.x, y:this.y, z:this.z});
+}
+}
 }

@@ -3,14 +3,48 @@
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="bullet.js"></script>
     <script src="script.js"></script>
-        <script src="ammo.js"></script>
-    <script src="snowman.js"></script>
+    <script src = "snowman.js"></script>
+    <script src = "ammobox.js"></script>
+    <script src = "tree.js"></script>
+    <script src ="otherTree.js"></script>
+    <script src ="bombbox.js"></script>
+    <script src = "medkit.js"></script>
   </head>
   <body>
-    <a-scene>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="40" height="40" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-      <a-camera position="0 1.6 0"></a-camera>
+    <a-scene cursor="rayOrigin: mouse" >
+
+      <a-light type="point" color="#ffffff" intensity="10" distance="150" position = "2 25 -10"></a-light>
+
+      <a-plane position="0 0 -1" rotation="-90 0 0" width="200" height="200" src = "snowy.jpg" repeat="15 -15" ></a-plane>
+      <a-sky rotation="0 -90 0" side = "double" src = "sky.jpg" repeat="10 -10"></a-sky>
+      
+      <a-camera active id="mainCamera" position="0 1.6 0">
+        <a-cursor raycaster="objects: .clickable">
+        <a-text id="ammo_count" position="-3 1.5 -1" value="Ammo: " color="blue"></a-text>
+        <a-text id="enemies_killed" position="1.5 1.5 -1" value="Score: " color="blue"></a-text>
+        <a-text id="health" position="1.5 1 -1" value="Health: " color="blue"></a-text>
+        <a-text id="timer" position="-3 1 -1" value="Time: " color="blue"></a-text>
+        <a-text id="gameover" value ="GAME OVER" position="-2 0 -2" color="red" visible="false" scale="3 3 3"></a-text>
+        <a-text value="Mission : Kill all 10 evil snowman before time runs out. There are ammo boxes and bandages scattered around the map, but be careful! The snowman will hurt you if you get to close and some ammo boxes may have hidden bombs..." position = "-2.5 4 -5" color = "red"></a-text>
+        <a-image id = "gameover_img" src = "gameover.png" position ="0 0 -2" visible="false" scale="5 5 5"></a-image>
+        <a-text id="youwin" value ="YOU WIN!" position="-1.5 0 -2" color="red" visible="false" scale="3 3 3"></a-text>
+        <a-image id="youwin_img" src="winner.png" position="0 0 -2" visible="false" scale="5 5 5"></a-image>
+        <a-image src = "gun.png" position ="0.5 -0.5 -0.2" ></a-image> 
+         <!--<a-plane position = "2.2 .5 -1" width = "1.5" height = "0.5" shader="flat" color = "black"></a-plane>
+        <a-plane position = "2.2 .5 -1" width = "1.25" height = "0.35" color = "green" shader="flat" ></a-plane> -->
+        <a-image id = "full_health" src = "fullhealth.png" position = "2.2 0.78 -1" visible = "true" scale = "2.35 1.25 1.25"></a-image>
+        <a-image id = "half_health" src = "halfhealth.png" position = "2.2 0.62 -1" visible = "false" scale = "2.15 0.95 0.95"></a-image>
+        <a-image id = "no_health" src = "nohealth.png" position = "2.18 0.62 -1" visible = "false" scale = "2.25 1.15 1.15"></a-image>
+        
+          
+        </a-cursor>
+          <a-image id="boomPicture" src="bomb.jpg" position="0 0 -0.1" visible="false" width=".2" height="0.2"></a-image>
+          <a-image id="hit" src="owie.png" position="0 0 -0.1" visible="false" width=".1" height=".1"></a-image>
+          <a-image id = "healing" src = "heal.png" position = "0 0 -0.1" visible = "false" width = ".2" height = ".2"></a-image>
+      </a-camera>
+      <a-sphere radius = "1.5" position = "2 20 -10" src = "moon.webp" >
+        <a-light type="point" color="#ffffff" intensity="4" distance="100"></a-light>
+      </a-sphere>
     </a-scene>
   </body>
 </html>
