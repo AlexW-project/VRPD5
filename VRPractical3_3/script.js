@@ -1,5 +1,5 @@
 let rnd = (l,u) => Math.random() * (u-l) + l
-let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 3, enemy_killed = 0, h = 100, t = 125, trees=[], otherTrees=[], bombs=[], medkits=[];
+let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 6, enemy_killed = 0, h = 100, t = 125, trees=[], otherTrees=[], bombs=[], medkits=[];
 
   let ammoMap = [ "-------------------------------------------------a---------------------------------------------------------------",
                   "-----------------------------------------------------------------------------------------------------------------",
