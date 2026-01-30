@@ -648,7 +648,42 @@ function roomTwo() {
 
   // ONE mushroom hides the teleport spot
   createMushroom(0, 0, true);
+
+  // Add a white button on top of the mushroom at (4, -5)
+  addWhiteButtonToMushroom(4, -5);
 }
+
+// Add a white button on top of a mushroom cap
+function addWhiteButtonToMushroom(x, z) {
+  // Load texture for the white button
+  const textureLoader = new THREE.TextureLoader();
+  const buttonTexture = textureLoader.load('path_to_white_button_texture.png');  // Replace with your white button texture path
+
+  // Create the button
+  const buttonGeometry = new THREE.CylinderGeometry(0.4, 0.4, 0.2, 32);
+  const buttonMaterial = new THREE.MeshStandardMaterial({
+    map: buttonTexture,
+    transparent: true,
+    opacity: 1
+  });
+
+  const button = new THREE.Mesh(buttonGeometry, buttonMaterial);
+
+  // Position the button on top of the mushroom cap
+  button.position.set(x, 2.4, z); // Adjust Y position to place the button on top of the mushroom cap
+
+  // Make it interactive (you can add a custom click event as needed)
+  button.userData = {
+    onClick: () => {
+      console.log("Button clicked!");
+    }
+  };
+
+  // Add the button to the scene
+  scene.add(button);
+  interactive.push(button);
+}
+
 
 function roomThree() {
   scene.background = new THREE.Color(0x000022);
