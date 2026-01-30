@@ -630,18 +630,44 @@ function roomTwo() {
   // Optional fog for atmosphere
   scene.fog = new THREE.Fog(0x1b0f1f, 6, 25);
 
-  // Decorative mushrooms
-  createMushroom(-6, -4);
-  createMushroom(4, -5);
-  createMushroom(7, 3);
-  createMushroom(-3, 6);
-  createMushroom(2, 4);
+  // Load textures
+  const textureLoader = new THREE.TextureLoader();
+  const texture1 = textureLoader.load('path_to_image_1.png');
+  const texture2 = textureLoader.load('path_to_image_2.png');
+  const texture3 = textureLoader.load('path_to_image_3.png');
+  
+  // Decorative mushrooms with different textures
+  createMushroom(-6, -4, texture1);
+  createMushroom(4, -5, texture2);
+  createMushroom(7, 3, texture3);
+  createMushroom(-3, 6, texture1);
+  createMushroom(2, 4, texture2);
 
   // ONE mushroom hides the teleport spot
-  createMushroom(0, 0, true);
+  createMushroom(0, 0, texture3, true);
 
   // Add a button on top of the mushroom at (4, -5)
   addButtonToMushroom(4, -5);
+}
+
+function createMushroom(x, y, texture, hideTeleport = false) {
+  const mushroomGeometry = new THREE.CylinderGeometry(1, 3, 8, 32);
+  
+  // Use the loaded texture for the mushroom
+  const mushroomMaterial = new THREE.MeshStandardMaterial({ map: texture });
+  
+  const mushroom = new THREE.Mesh(mushroomGeometry, mushroomMaterial);
+  
+  // Position the mushroom
+  mushroom.position.set(x, y, 0);
+  
+  // Optionally hide teleport spot
+  if (hideTeleport) {
+    mushroom.visible = false; // You can handle teleport logic separately
+  }
+
+  // Add the mushroom to the scene
+  scene.add(mushroom);
 }
 
 function addButtonToMushroom(x, y) {
